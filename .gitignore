@@ -1,0 +1,17 @@
+# Project exclude paths
+/Gmall-Common/target/
+/Gmall-Common/Gmall-Common.iml
+/Gmall-Logger/.mvn/
+/Gmall-Logger/target/
+/Gmall-Logger/.gitignore
+/Gmall-Logger/gmall-logger.iml
+/Gmall-Logger/HELP.md
+/Gmall-Logger/mvnw
+/Gmall-Logger/mvnw.cmd
+/Gmall-Mock/target/
+/Gmall-Mock/Gmall-Mock.iml
+/Gmall-Publish/Gmall-Publish.iml
+/Gmall-Realtime/Gmall-Realtime.iml
+.idea
+Gmall-Parent.iml
+.gitignore
