@@ -12,6 +12,7 @@
 /Gmall-Mock/Gmall-Mock.iml
 /Gmall-Publish/Gmall-Publish.iml
 /Gmall-Realtime/Gmall-Realtime.iml
+/Gmall-Realtime/target/
 .idea
 Gmall-Parent.iml
 .gitignore
