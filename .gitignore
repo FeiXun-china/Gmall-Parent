@@ -18,6 +18,8 @@
 /Gmall-Publish/mvnw
 /Gmall-Publish/mvnw.cmd
 /Gmall-Publish/target/
+/Gmall-Canal/Gmall-Canal.iml
+/Gmall-Canal/target/
 .idea
 Gmall-Parent.iml
 .gitignore

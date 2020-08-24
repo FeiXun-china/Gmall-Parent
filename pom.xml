@@ -22,6 +22,7 @@
         <module>Gmall-Realtime</module>
         <module>Gmall-Mock</module>
         <module>Gmall-Publish</module>
+        <module>Gmall-Canal</module>
     </modules>
     <properties>
         <spark.version>2.1.1</spark.version>
