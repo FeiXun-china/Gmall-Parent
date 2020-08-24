@@ -13,6 +13,11 @@
 /Gmall-Publish/Gmall-Publish.iml
 /Gmall-Realtime/Gmall-Realtime.iml
 /Gmall-Realtime/target/
+/Gmall-Publish/.mvn/
+/Gmall-Publish/HELP.md
+/Gmall-Publish/mvnw
+/Gmall-Publish/mvnw.cmd
+/Gmall-Publish/target/
 .idea
 Gmall-Parent.iml
 .gitignore
