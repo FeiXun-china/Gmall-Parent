@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSON
 import com.phillips.gmall.common.constants.GmallConstant
 import com.phillips.gmall.realtime.bean.StartUpLog
 import com.phillips.gmall.realtime.util.{MyKafkaUtil, RedisUtil}
+import org.apache.hadoop.conf.Configuration
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.spark.SparkConf
 import org.apache.spark.broadcast.Broadcast
@@ -15,7 +16,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.dstream.{DStream, InputDStream}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 import redis.clients.jedis.Jedis
-
+import org.apache.phoenix.spark._
 object DauApp {
 
     def main(args: Array[String]): Unit = {
@@ -41,6 +42,8 @@ object DauApp {
             startUpLog
         }
 
+        // 处理复杂业务时添加cache()方法，增加缓存
+        startUpLogDStream.cache()
         // 3、根据清单进行过滤  driver
         /**
          * 除了与其他批次之间的数据进行去重，还需要在同一批次中进行去重
@@ -104,6 +107,14 @@ object DauApp {
             //                val dauKey = "dau:" + startUpLog.logDate
             //                jedis.sadd(dauKey, startUpLog.mid)
             //            }
+
+        }
+
+        // 通过phoenix将流数据保存进入hbase中
+        startUpLogDStreamRealFiltered.foreachRDD{ rdd =>
+            rdd.saveToPhoenix("GMALL_DAU", Seq("MID", "UID", "APPID", "AREA", "OS", "CH", "TYPE", "VS", "LOGDATE", "LOGHOUR", "TS"),
+                new Configuration,
+                Some("hadoop102,hadoop103,hadoop104:2181"))
 
         }
 

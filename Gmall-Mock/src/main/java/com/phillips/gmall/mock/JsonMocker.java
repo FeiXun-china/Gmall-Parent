@@ -32,7 +32,7 @@ public class JsonMocker {
     };
     RandomOptionGroup<String> areaOptionGroup = new RandomOptionGroup(areaOpts);
 
-    String appId = "gmall2019";
+    String appId = "gmall2020";
 
     RanOpt[] vsOpts = {new RanOpt("1.2.0", 50), new RanOpt("1.1.2", 15),
             new RanOpt("1.1.3", 30),
